@@ -7,7 +7,7 @@ public class TourCreated extends DomainEvent {
     private final Name tourName;
 
     public TourCreated(Name name) {
-        super("sofkau.tour.tourcreated");
+        super("sofkau.dddtourismagancy.tour.tourcreated");
         this.tourName = name;
     }
 

@@ -6,11 +6,11 @@ import com.sofkau.dddtourismagancy.tourismagancy.values.TouristId;
 
 import java.util.Set;
 
-public class listOfRentalPackageUpdated extends DomainEvent {
+public class ListOfRentalPackageUpdated extends DomainEvent {
     private final TouristId touristId;
     private final Set<RentalPackage> listOfRentalPackage;
 
-    public listOfRentalPackageUpdated(TouristId touristId, Set<RentalPackage> listOfRentalPackage) {
+    public ListOfRentalPackageUpdated(TouristId touristId, Set<RentalPackage> listOfRentalPackage) {
         super("sofkau.dddtourismagancy.tourismagancy.AgencyNameUpdated");
         this.touristId = touristId;
         this.listOfRentalPackage = listOfRentalPackage;

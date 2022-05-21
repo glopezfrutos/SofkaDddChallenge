@@ -24,6 +24,11 @@ public class TourismAgency extends AggregateEvent<TourismAgencyId> {
         appendChange(new TourismAgencyCreated(agencyName, agencyAddress, agencyOfficeHours)).apply();
     }
 
+    private TourismAgency(TourismAgencyId tourismAgencyId) {
+        super(tourismAgencyId);
+        subscribe(new TourismAgencyChange(this));
+    }
+
     public void updateAgencyName(Name agencyName) {
         appendChange(new AgencyNameUpdated(agencyName)).apply();
     }
@@ -53,7 +58,7 @@ public class TourismAgency extends AggregateEvent<TourismAgencyId> {
     }
 
     public void updateListOfRentalPackages(TouristId touristId, Set<RentalPackage> listOfRentalPackage) {
-        appendChange(new listOfRentalPackageUpdated(touristId, listOfRentalPackage)).apply();
+        appendChange(new ListOfRentalPackageUpdated(touristId, listOfRentalPackage)).apply();
     }
 
     public void addAgent(AgentId entityId, Name agentName, Set<Tourist> listOfTouristInCharge) {
