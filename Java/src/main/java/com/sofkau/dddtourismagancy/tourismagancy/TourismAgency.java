@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import com.sofkau.dddtourismagancy.rentalpackage.RentalPackage;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 import com.sofkau.dddtourismagancy.tour.Tour;
+import com.sofkau.dddtourismagancy.tourismagancy.events.*;
 import com.sofkau.dddtourismagancy.tourismagancy.values.*;
 
 import java.util.Objects;

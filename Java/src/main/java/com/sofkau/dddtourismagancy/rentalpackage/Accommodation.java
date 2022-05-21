@@ -5,12 +5,12 @@ import com.sofkau.dddtourismagancy.rentalpackage.values.AccommodationId;
 import com.sofkau.dddtourismagancy.rentalpackage.values.AccommodationType;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 
-public class Accomodation extends Entity<AccommodationId> {
+public class Accommodation extends Entity<AccommodationId> {
     private AccommodationType accommodationType;
     private Name accommodationName;
 
 
-    public Accomodation(AccommodationId entityId, AccommodationType accommodationType, Name accommodationName) {
+    public Accommodation(AccommodationId entityId, AccommodationType accommodationType, Name accommodationName) {
         super(entityId);
         this.accommodationType = accommodationType;
         this.accommodationName = accommodationName;

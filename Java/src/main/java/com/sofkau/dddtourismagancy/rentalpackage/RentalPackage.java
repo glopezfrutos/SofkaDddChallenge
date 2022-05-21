@@ -1,6 +1,7 @@
 package com.sofkau.dddtourismagancy.rentalpackage;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import com.sofkau.dddtourismagancy.rentalpackage.events.*;
 import com.sofkau.dddtourismagancy.rentalpackage.values.*;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 
@@ -10,11 +11,11 @@ import java.util.Set;
 
 public class RentalPackage extends AggregateEvent<RentalPackageId> {
     protected Set<Vehicle> vehicles;
-    protected Set<Accomodation> accomodations;
+    protected Set<Accommodation> accommodations;
 
-    public RentalPackage(RentalPackageId entityId, Set<Vehicle> vehicles, Set<Accomodation> accomodations) {
+    public RentalPackage(RentalPackageId entityId, Set<Vehicle> vehicles, Set<Accommodation> accommodations) {
         super(entityId);
-        appendChange(new RentalPackageCreated(entityId, vehicles, accomodations)).apply();
+        appendChange(new RentalPackageCreated(vehicles, accommodations)).apply();
     }
 
     public void addVehicle(VehicleId entityId, VehicleType vehicleType, RegistrationPlate registrationPlate) {
@@ -55,10 +56,10 @@ public class RentalPackage extends AggregateEvent<RentalPackageId> {
                 .findFirst();
     }
 
-    public Optional<Accomodation> getAccommodationById(AccommodationId accommodationId) {
+    public Optional<Accommodation> getAccommodationById(AccommodationId accommodationId) {
         return accomodations()
                 .stream()
-                .filter(accomodation -> accomodation.identity().equals(accommodationId))
+                .filter(accommodation -> accommodation.identity().equals(accommodationId))
                 .findFirst();
     }
 
@@ -67,7 +68,7 @@ public class RentalPackage extends AggregateEvent<RentalPackageId> {
         return vehicles;
     }
 
-    public Set<Accomodation> accomodations() {
-        return accomodations;
+    public Set<Accommodation> accomodations() {
+        return accommodations;
     }
 }
