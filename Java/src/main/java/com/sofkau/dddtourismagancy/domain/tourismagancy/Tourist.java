@@ -2,7 +2,7 @@ package com.sofkau.dddtourismagancy.domain.tourismagancy;
 
 import co.com.sofka.domain.generic.Entity;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.RentalPackage;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 import com.sofkau.dddtourismagancy.domain.tour.Tour;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TouristId;
 

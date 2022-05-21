@@ -3,7 +3,7 @@ package com.sofkau.dddtourismagancy.domain.rentalpackage.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationId;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationType;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class AccommodationAdded extends DomainEvent {
     private final AccommodationId entityId;

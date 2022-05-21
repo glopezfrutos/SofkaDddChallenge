@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.tour.values.DestinationDistance;
 import com.sofkau.dddtourismagancy.domain.tour.values.DestinationId;
 import com.sofkau.dddtourismagancy.domain.tour.values.TourId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class AddDestination extends Command {
     private final TourId tourId;

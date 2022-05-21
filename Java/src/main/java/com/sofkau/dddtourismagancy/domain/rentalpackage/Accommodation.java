@@ -3,7 +3,7 @@ package com.sofkau.dddtourismagancy.domain.rentalpackage;
 import co.com.sofka.domain.generic.Entity;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationType;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class Accommodation extends Entity<AccommodationId> {
     private AccommodationType accommodationType;

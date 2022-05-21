@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.Tourist;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgentId;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TourismAgencyId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 import java.util.Set;
 

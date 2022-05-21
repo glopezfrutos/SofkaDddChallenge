@@ -1,7 +1,7 @@
 package com.sofkau.dddtourismagancy.domain.tourismagancy;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgentId;
 
 import java.util.Set;

@@ -5,7 +5,7 @@ import com.sofkau.dddtourismagancy.domain.rentalpackage.RentalPackage;
 import com.sofkau.dddtourismagancy.domain.tour.Tour;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TourismAgencyId;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TouristId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 import java.util.Set;
 

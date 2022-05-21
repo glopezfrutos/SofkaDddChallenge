@@ -2,7 +2,7 @@ package com.sofkau.dddtourismagancy.domain.tour.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.tour.values.TourId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class CreateTour extends Command {
     private final TourId entityId;

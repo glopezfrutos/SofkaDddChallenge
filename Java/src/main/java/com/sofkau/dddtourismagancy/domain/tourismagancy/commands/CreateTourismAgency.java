@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgencyAddress;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgencyOfficeHours;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TourismAgencyId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class CreateTourismAgency extends Command {
     private final TourismAgencyId entityId;

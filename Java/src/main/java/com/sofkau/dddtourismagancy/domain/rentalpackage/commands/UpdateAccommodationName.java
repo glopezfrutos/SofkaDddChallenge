@@ -3,7 +3,7 @@ package com.sofkau.dddtourismagancy.domain.rentalpackage.commands;
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationId;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.RentalPackageId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class UpdateAccommodationName extends Command {
     private final RentalPackageId rentalPackageId;

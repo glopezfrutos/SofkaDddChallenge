@@ -1,7 +1,7 @@
 package com.sofkau.dddtourismagancy.domain.tourismagancy.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class AgencyNameUpdated extends DomainEvent {
     private final Name agencyName;

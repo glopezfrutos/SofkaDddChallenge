@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationId;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.AccommodationType;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.RentalPackageId;
-import com.sofkau.dddtourismagancy.domain.values.Name;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 public class AddAccommodation extends Command {
     private final RentalPackageId rentalPackageId;

@@ -1,4 +1,4 @@
-package com.sofkau.dddtourismagancy.domain.values;
+package com.sofkau.dddtourismagancy.domain.shared.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
