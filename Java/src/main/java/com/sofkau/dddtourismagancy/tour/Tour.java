@@ -69,14 +69,14 @@ public class Tour extends AggregateEvent<TourId> {
     }
 
 
-    public Optional<Destination> getDestinationById(DestinationId destinationId) {
+    protected Optional<Destination> getDestinationById(DestinationId destinationId) {
         return destinations()
                 .stream()
                 .filter(destination -> destination.identity().equals(destinationId))
                 .findFirst();
     }
 
-    public Optional<Transport> getTransportById(TransportId transportId) {
+    protected Optional<Transport> getTransportById(TransportId transportId) {
         return transports()
                 .stream()
                 .filter(transport -> transport.identity().equals(transportId))

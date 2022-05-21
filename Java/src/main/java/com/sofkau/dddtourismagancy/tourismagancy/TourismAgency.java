@@ -86,14 +86,14 @@ public class TourismAgency extends AggregateEvent<TourismAgencyId> {
     }
 
 
-    public Optional<Agent> getAgentById(AgentId agentId) {
+    protected Optional<Agent> getAgentById(AgentId agentId) {
         return agents()
                 .stream()
                 .filter(agent -> agent.identity().equals(agentId))
                 .findFirst();
     }
 
-    public Optional<Tourist> getTouristById(TouristId touristId) {
+    protected Optional<Tourist> getTouristById(TouristId touristId) {
         return tourists()
                 .stream()
                 .filter(tourist -> tourist.identity().equals(touristId))

@@ -62,14 +62,14 @@ public class RentalPackage extends AggregateEvent<RentalPackageId> {
     }
 
 
-    public Optional<Vehicle> getVehicleById(VehicleId vehicleId) {
+    protected Optional<Vehicle> getVehicleById(VehicleId vehicleId) {
         return vehicles()
                 .stream()
                 .filter(vehicle -> vehicle.identity().equals(vehicleId))
                 .findFirst();
     }
 
-    public Optional<Accommodation> getAccommodationById(AccommodationId accommodationId) {
+    protected Optional<Accommodation> getAccommodationById(AccommodationId accommodationId) {
         return accomodations()
                 .stream()
                 .filter(accommodation -> accommodation.identity().equals(accommodationId))
