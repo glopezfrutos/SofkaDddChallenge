@@ -1,10 +1,12 @@
 package com.sofkau.dddtourismagancy.rentalpackage;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddtourismagancy.rentalpackage.events.*;
 import com.sofkau.dddtourismagancy.rentalpackage.values.*;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -16,6 +18,17 @@ public class RentalPackage extends AggregateEvent<RentalPackageId> {
     public RentalPackage(RentalPackageId entityId, Set<Vehicle> vehicles, Set<Accommodation> accommodations) {
         super(entityId);
         appendChange(new RentalPackageCreated(vehicles, accommodations)).apply();
+    }
+
+    private RentalPackage(RentalPackageId entityId) {
+        super(entityId);
+        subscribe(new RentalPackageChange(this));
+    }
+
+    public static RentalPackage from(RentalPackageId entityId, List<DomainEvent> events) {
+        var rentalPackage = new RentalPackage(entityId);
+        events.forEach(rentalPackage::applyEvent);
+        return rentalPackage;
     }
 
     public void addVehicle(VehicleId entityId, VehicleType vehicleType, RegistrationPlate registrationPlate) {

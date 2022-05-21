@@ -1,12 +1,14 @@
 package com.sofkau.dddtourismagancy.tourismagancy;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddtourismagancy.rentalpackage.RentalPackage;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 import com.sofkau.dddtourismagancy.tour.Tour;
 import com.sofkau.dddtourismagancy.tourismagancy.events.*;
 import com.sofkau.dddtourismagancy.tourismagancy.values.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -28,6 +30,13 @@ public class TourismAgency extends AggregateEvent<TourismAgencyId> {
         super(tourismAgencyId);
         subscribe(new TourismAgencyChange(this));
     }
+
+    public static TourismAgency from(TourismAgencyId tourismAgencyId, List<DomainEvent> events) {
+        var agency = new TourismAgency(tourismAgencyId);
+        events.forEach(agency::applyEvent);
+        return agency;
+    }
+
 
     public void updateAgencyName(Name agencyName) {
         appendChange(new AgencyNameUpdated(agencyName)).apply();

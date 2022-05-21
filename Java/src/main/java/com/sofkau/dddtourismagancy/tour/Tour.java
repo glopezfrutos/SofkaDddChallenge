@@ -1,10 +1,12 @@
 package com.sofkau.dddtourismagancy.tour;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddtourismagancy.shared.values.Name;
 import com.sofkau.dddtourismagancy.tour.events.*;
 import com.sofkau.dddtourismagancy.tour.values.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -18,6 +20,17 @@ public class Tour extends AggregateEvent<TourId> {
     public Tour(TourId entityId, Name tourName) {
         super(entityId);
         appendChange(new TourCreated(tourName)).apply();
+    }
+
+    private Tour(TourId entityId) {
+        super(entityId);
+        subscribe(new TourChange(this));
+    }
+
+    public static Tour from(TourId entityId, List<DomainEvent> events) {
+        var tour = new Tour(entityId);
+        events.forEach(tour::applyEvent);
+        return tour;
     }
 
 
