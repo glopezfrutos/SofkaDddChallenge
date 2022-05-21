@@ -8,12 +8,12 @@ import java.util.Set;
 
 public class Agent extends Entity<AgentId> {
     private Name agentName;
-    private Set<Tourist> listOfTouristInCharge;
+    private Set<Tourist> listOfTouristsInCharge;
 
-    public Agent(AgentId entityId, Name agentName, Set<Tourist> listOfTouristInCharge) {
+    public Agent(AgentId entityId, Name agentName, Set<Tourist> listOfTouristsInCharge) {
         super(entityId);
         this.agentName = agentName;
-        this.listOfTouristInCharge = listOfTouristInCharge;
+        this.listOfTouristsInCharge = listOfTouristsInCharge;
     }
 
 
@@ -22,7 +22,7 @@ public class Agent extends Entity<AgentId> {
     }
 
     public void updateListOfTouristInCharge(Set<Tourist> listOfTouristInCharge) {
-        this.listOfTouristInCharge = listOfTouristInCharge;
+        this.listOfTouristsInCharge = listOfTouristInCharge;
     }
 
 
@@ -30,7 +30,7 @@ public class Agent extends Entity<AgentId> {
         return agentName;
     }
 
-    public Set<Tourist> listOfTouristInCharge() {
-        return listOfTouristInCharge;
+    public Set<Tourist> listOfTouristsInCharge() {
+        return listOfTouristsInCharge;
     }
 }
