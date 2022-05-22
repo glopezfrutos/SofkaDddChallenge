@@ -2,11 +2,9 @@ package com.sofkau.dddtourismagancy.domain.tour;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 import com.sofkau.dddtourismagancy.domain.tour.events.*;
 import com.sofkau.dddtourismagancy.domain.tour.values.*;
-import com.sofkau.dddtourismagancy.domain.shared.values.Name;
-import com.sofkau.dddtourismagancy.tour.events.*;
-import com.sofkau.dddtourismagancy.tour.values.*;
 
 import java.util.List;
 import java.util.Objects;

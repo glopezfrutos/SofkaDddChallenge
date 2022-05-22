@@ -2,7 +2,8 @@ package com.sofkau.dddtourismagancy.domain.tourismagancy;
 
 import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddtourismagancy.domain.tourismagancy.events.*;
-import com.sofkau.dddtourismagancy.tourismagancy.events.*;
+
+import java.util.HashSet;
 
 public class TourismAgencyChange extends EventChange {
     public TourismAgencyChange(TourismAgency tourismAgency) {
@@ -10,6 +11,8 @@ public class TourismAgencyChange extends EventChange {
             tourismAgency.agencyName = event.getAgencyName();
             tourismAgency.agencyAddress = event.getAgencyAddress();
             tourismAgency.agencyOfficeHours = event.getAgencyOfficeHours();
+            tourismAgency.tourists = new HashSet<>();
+            tourismAgency.agents = new HashSet<>();
         } );
 
         apply((AgencyNameUpdated event) -> {

@@ -2,12 +2,15 @@ package com.sofkau.dddtourismagancy.domain.tour;
 
 import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddtourismagancy.domain.tour.events.*;
-import com.sofkau.dddtourismagancy.tour.events.*;
+
+import java.util.HashSet;
 
 public class TourChange extends EventChange {
     public TourChange(Tour tour) {
         apply((TourCreated event) -> {
             tour.tourName = event.getTourName();
+            tour.destinations = new HashSet<>();
+            tour.transports = new HashSet<>();
         } );
 
         apply((TourNameUpdated event) -> {

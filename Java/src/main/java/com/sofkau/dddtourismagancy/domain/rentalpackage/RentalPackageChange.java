@@ -2,7 +2,6 @@ package com.sofkau.dddtourismagancy.domain.rentalpackage;
 
 import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.events.*;
-import com.sofkau.dddtourismagancy.rentalpackage.events.*;
 
 public class RentalPackageChange extends EventChange {
     public RentalPackageChange(RentalPackage rentalPackage) {

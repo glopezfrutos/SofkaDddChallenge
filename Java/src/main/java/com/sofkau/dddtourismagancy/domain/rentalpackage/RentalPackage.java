@@ -4,8 +4,6 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.events.*;
 import com.sofkau.dddtourismagancy.domain.rentalpackage.values.*;
-import com.sofkau.dddtourismagancy.rentalpackage.events.*;
-import com.sofkau.dddtourismagancy.rentalpackage.values.*;
 import com.sofkau.dddtourismagancy.domain.shared.values.Name;
 
 import java.util.List;
