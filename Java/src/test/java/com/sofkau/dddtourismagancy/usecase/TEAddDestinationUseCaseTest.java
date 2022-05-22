@@ -4,10 +4,8 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.TriggeredEvent;
 import com.sofkau.dddtourismagancy.domain.shared.values.Name;
-import com.sofkau.dddtourismagancy.domain.tourismagancy.events.AgentAdded;
-import com.sofkau.dddtourismagancy.domain.tourismagancy.events.TourismAgencyCreated;
-import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgencyAddress;
-import com.sofkau.dddtourismagancy.domain.tourismagancy.values.AgencyOfficeHours;
+import com.sofkau.dddtourismagancy.domain.tour.events.DestinationAdded;
+import com.sofkau.dddtourismagancy.domain.tour.events.TourCreated;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,25 +15,21 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @ExtendWith(MockitoExtension.class)
-class AddAgentUseCaseTest {
-    private final String ROOTID = "123";
+class TEAddDestinationUseCaseTest {
+    private final String ROOTID = "test123";
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    void addAgent(){
-        var event = new TourismAgencyCreated(
-                new Name("Central Patagonia"),
-                new AgencyAddress("Lakes road 123"),
-                new AgencyOfficeHours("24 hours open")
+    void addDestination(){
+        var event = new TourCreated(
+                new Name("Victoria Island")
         );
         event.setAggregateRootId(ROOTID);
 
-        var useCase = new AddAgentUseCase();
+        var useCase = new TEAddDestinationUseCase();
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
                 event
         ));
@@ -48,8 +42,9 @@ class AddAgentUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        var result = (AgentAdded)events.get(0);
-        Assertions.assertEquals("The Boss", result.getAgentName().value());
+        var result = (DestinationAdded)events.get(0);
+        Assertions.assertEquals("Starting point", result.getDestinationName().value());
+        Assertions.assertEquals("Km 0", result.getDestinationDistance().value());
         Mockito.verify(repository).getEventsBy(ROOTID);
     }
 

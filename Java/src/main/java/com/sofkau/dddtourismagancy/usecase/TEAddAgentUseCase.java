@@ -11,7 +11,7 @@ import com.sofkau.dddtourismagancy.domain.tourismagancy.values.TourismAgencyId;
 
 import java.util.HashSet;
 
-public class AddAgentUseCase extends UseCase<TriggeredEvent<TourismAgencyCreated>, ResponseEvents> {
+public class TEAddAgentUseCase extends UseCase<TriggeredEvent<TourismAgencyCreated>, ResponseEvents> {
     @Override
     public void executeUseCase(TriggeredEvent<TourismAgencyCreated> tourismAgencyCreatedTriggeredEvent) {
         var event = tourismAgencyCreatedTriggeredEvent.getDomainEvent();
