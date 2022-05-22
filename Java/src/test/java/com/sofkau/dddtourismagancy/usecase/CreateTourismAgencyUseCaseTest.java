@@ -15,7 +15,7 @@ class CreateTourismAgencyUseCaseTest {
 
 
     @Test
-    void CreateTourismAgency(){
+    void test(){
         var command = new CreateTourismAgency(
                 TourismAgencyId.of("xxxx"),
                 new Name("Central"),

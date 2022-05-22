@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 class CreateTourUseCaseTest {
     @Test
-    void createTour(){
+    void test(){
         var command = new CreateTour(
                 new TourId(),
                 new Name("Small circuit")

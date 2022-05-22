@@ -25,7 +25,7 @@ class TEAddAgentUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void addAgent(){
+    void test(){
         var event = new TourismAgencyCreated(
                 new Name("Central Patagonia"),
                 new AgencyAddress("Lakes road 123"),

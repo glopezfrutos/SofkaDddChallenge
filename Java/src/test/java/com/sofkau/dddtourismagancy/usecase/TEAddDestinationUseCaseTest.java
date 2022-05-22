@@ -23,7 +23,7 @@ class TEAddDestinationUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void addDestination(){
+    void test(){
         var event = new TourCreated(
                 new Name("Victoria Island")
         );
